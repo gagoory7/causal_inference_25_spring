@@ -1,0 +1,36 @@
+# config.yaml
+
+crawl :
+  start : True
+  date : 20250508
+  crawl_duration : 14
+  workers : 4
+  media_company :
+      '중앙일보' : '025'
+      '경향신문' : '032'
+      '국민일보' : '005'
+      '동아일보' : '020'
+      '문화일보' : '021'
+      '서울신문' : '081'
+      '한국일보' : '469'
+      '세계일보' : '022'
+      '한겨레' : '028'
+      '조선일보' : '023'
+
+confounder: ['media','section']
+
+thresholding : 13  # reactions thershod
+
+model_config : "monologg/kobert" # BERT model for the Korean language
+
+loss_weight:
+    'propensity_weight': 0.1  # trt prediction loss
+    'outcome_weight': 0.1  # outcome loss
+    'mlm_weight': 1  # mlm loss 
+
+epochs : 20
+
+lr : 5e-5
+
+save_result : True
+
